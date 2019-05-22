@@ -119,8 +119,8 @@ public class LinkedList<T> implements IList<T> {
 		{
 			
 			head = head.getNext();
-            head.setPrev(null);
-            size--;
+            		head.setPrev(null);
+           		size--;
 		}
 	}
     //linear as above
@@ -172,8 +172,8 @@ public class LinkedList<T> implements IList<T> {
 		{
 			
 			tail = tail.getPrev();
-            tail.setNext(null);
-            size--;
+            		tail.setNext(null);
+           		size--;
 		}
 	}
 
