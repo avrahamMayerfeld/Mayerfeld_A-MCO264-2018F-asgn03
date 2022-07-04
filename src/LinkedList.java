@@ -45,10 +45,10 @@ public class LinkedList<T> implements IList<T> {
 		if (index < 0)
 			throw new Exception();
 		
-		if (index > size)
+		if (index >= size)
 			throw new Exception();
 		
-		if (index == size)
+		if (index == size - 1)
 			insertAtTail(data);
 			
 		if (index == 0)
@@ -201,10 +201,10 @@ public class LinkedList<T> implements IList<T> {
 		if (isEmpty())
 			throw new Exception();
 		
-		if (index > size)
+		if (index >= size)
 			throw new Exception();
 		
-		if (index == size)
+		if (index == size - 1)
 			return getTail();
 	
 		if (index == 0)
