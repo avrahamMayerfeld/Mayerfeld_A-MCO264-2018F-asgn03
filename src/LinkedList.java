@@ -118,8 +118,9 @@ public class LinkedList<T> implements IList<T> {
 		else 
 		{
 			
-			head = head.getNext();
-            		head.setPrev(null);
+			head.setPrev(null);
+			if(head.getNext() != null)
+				head = head.getNext();
            		size--;
 		}
 	}
@@ -133,10 +134,10 @@ public class LinkedList<T> implements IList<T> {
 		if (index == 0)
 			deleteHead();
 		
-		if (index > size)
+		if (index > size - 1)
 			throw new Exception();
 		
-		if (index == size)
+		if (index == size - 1)
 			deleteTail();
 		
 		else 
@@ -144,13 +145,13 @@ public class LinkedList<T> implements IList<T> {
 			
 			Node<T> current = head.getNext();
 	
-			for(int i = 1; i <= index; i++)
+			for(int i = 1; i < index; i++)
 			{
 				current = current.getNext();
 			}
-			
-			current.getNext().setPrev(current.getPrev());
 			current.getPrev().setNext(current.getNext());
+			if(current.getNext() != null)
+				current.getNext().setPrev(current.getPrev());
 			size--;	
 		}	
 			
